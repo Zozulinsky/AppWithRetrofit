@@ -17,7 +17,7 @@ public class DialogFragment1 extends DialogFragment implements View.OnClickListe
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().setTitle("Выбери действие:");
         View v = inflater.inflate(R.layout.dialog1, null);
-       // v.findViewById(R.id.btnDelete).setOnClickListener(this);
+        v.findViewById(R.id.btnDelete).setOnClickListener(this);
         v.findViewById(R.id.btnCancel).setOnClickListener(this);
         return v;
     }
