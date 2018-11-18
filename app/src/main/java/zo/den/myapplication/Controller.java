@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import zo.den.myapplication.service.NewsApi;
 
 public class Controller {
     static final String BASE_URL = "https://api.tinkoff.ru/v1/";

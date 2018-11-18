@@ -1,5 +1,5 @@
 
-package zo.den.myapplication;
+package zo.den.myapplication.pojo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -8,13 +8,13 @@ public class PublicationDate {
 
     @SerializedName("milliseconds")
     @Expose
-    private Integer milliseconds;
+    private Long milliseconds;
 
-    public Integer getMilliseconds() {
+    public Long getMilliseconds() {
         return milliseconds;
     }
 
-    public void setMilliseconds(Integer milliseconds) {
+    public void setMilliseconds(Long milliseconds) {
         this.milliseconds = milliseconds;
     }
 

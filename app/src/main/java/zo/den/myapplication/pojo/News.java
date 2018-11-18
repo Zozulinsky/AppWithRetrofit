@@ -1,9 +1,11 @@
 
-package zo.den.myapplication;
+package zo.den.myapplication.pojo;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import zo.den.myapplication.pojo.Payload;
 
 public class News {
 
