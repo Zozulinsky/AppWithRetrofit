@@ -4,8 +4,11 @@ package zo.den.myapplication.pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Payload {
+import zo.den.myapplication.pojo.CreationDate;
+import zo.den.myapplication.pojo.LastModificationDate;
+import zo.den.myapplication.pojo.Title;
 
+public class Payload {
     @SerializedName("id")
     @Expose
     private String id;
@@ -15,43 +18,55 @@ public class Payload {
     @SerializedName("text")
     @Expose
     private String text;
-    @SerializedName("publicationDate")
+    @SerializedName("title")
     @Expose
-    private PublicationDate publicationDate;
+    private Title title;
+    @SerializedName("creationDate")
+    @Expose
+    private CreationDate creationDate;
+    @SerializedName("lastModificationDate")
+    @Expose
+    private LastModificationDate lastModificationDate;
+    @SerializedName("content")
+    @Expose
+    private String content;
     @SerializedName("bankInfoTypeId")
     @Expose
     private Integer bankInfoTypeId;
+    @SerializedName("typeId")
+    @Expose
+    private String typeId;
 
-    public String getId() {
-        return id;
+    public Title getTitle() {
+        return title;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTitle(Title title) {
+        this.title = title;
     }
 
-    public String getName() {
-        return name;
+    public CreationDate getCreationDate() {
+        return creationDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCreationDate(CreationDate creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public String getText() {
-        return text;
+    public LastModificationDate getLastModificationDate() {
+        return lastModificationDate;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setLastModificationDate(LastModificationDate lastModificationDate) {
+        this.lastModificationDate = lastModificationDate;
     }
 
-    public PublicationDate getPublicationDate() {
-        return publicationDate;
+    public String getContent() {
+        return content;
     }
 
-    public void setPublicationDate(PublicationDate publicationDate) {
-        this.publicationDate = publicationDate;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Integer getBankInfoTypeId() {
@@ -62,4 +77,23 @@ public class Payload {
         this.bankInfoTypeId = bankInfoTypeId;
     }
 
+    public String getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="zo.den.myapplication.MainActivity">
+    <TextView
+        android:id="@+id/titleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZAGOLOVOK"
+        />
+    <TextView
+        android:id="@+id/publicationDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DATA PUBLIKACII"
+        android:textColor="#D3D3D3"
+        />
+    <TextView
+        android:id="@+id/contentNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KONTENT"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+
+</LinearLayout>

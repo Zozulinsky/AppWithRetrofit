@@ -1,9 +1,9 @@
 package zo.den.myapplication.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,7 +18,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import zo.den.myapplication.Controller;
-import zo.den.myapplication.MainActivity;
 import zo.den.myapplication.R;
 import zo.den.myapplication.adapter.NewsAdapter;
 import zo.den.myapplication.pojo.News;
@@ -30,7 +29,7 @@ public class Fragment1 extends android.support.v4.app.Fragment {
     RecyclerView recyclerView;
     List<Payload> newsList;
     private NewsApi newsApi;
-    NewsAdapter adapter = new NewsAdapter();
+    NewsAdapter adapter = new NewsAdapter(this);
 
     @Nullable
     @Override
@@ -48,8 +47,8 @@ public class Fragment1 extends android.support.v4.app.Fragment {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
                 News news = response.body();
-                for (int i = 0; i < news.getPayload().size(); i++) {
-                    newsList.add(news.getPayload().get(i));
+                for (int i = 0; i < news.getPayloadList().size(); i++) {
+                    newsList.add(news.getPayloadList().get(i));
 
                 }
                 adapter.setNewsList(newsList);
@@ -60,7 +59,27 @@ public class Fragment1 extends android.support.v4.app.Fragment {
                 t.printStackTrace();
             }
         });
-
+        isStateSaved();
         return rootView;
     }
+
+    public interface OnTouchListener{
+        //TODO
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+
+    }
+
+
+
+
 }

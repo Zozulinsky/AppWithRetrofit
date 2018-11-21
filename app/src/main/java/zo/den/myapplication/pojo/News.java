@@ -5,16 +5,27 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import zo.den.myapplication.pojo.Payload;
 
 public class News {
 
     @SerializedName("resultCode")
     @Expose
     private String resultCode;
+    @SerializedName("payloadList")
+    @Expose
+    private Payload payload;
+
+    public Payload getPayload() {
+        return payload;
+    }
+
+    public void setPayload(Payload payload) {
+        this.payload = payload;
+    }
+
     @SerializedName("payload")
     @Expose
-    private List<Payload> payload;
+    private List<Payload> payloadList;
     @SerializedName("trackingId")
     @Expose
     private String trackingId;
@@ -27,13 +38,13 @@ public class News {
         this.resultCode = resultCode;
     }
 
-    public List<Payload> getPayload() {
+    public List<Payload> getPayloadList() {
 
-        return payload;
+        return payloadList;
     }
 
-    public void setPayload(List<Payload> payload) {
-        this.payload = payload;
+    public void setPayloadList(List<Payload> payloadList) {
+        this.payloadList = payloadList;
     }
 
     public String getTrackingId() {
