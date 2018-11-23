@@ -6,6 +6,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
 import zo.den.myapplication.pojo.News;
+import zo.den.myapplication.pojo.News2;
 
 public interface NewsApi {
 
@@ -13,5 +14,5 @@ public interface NewsApi {
     Call<News> getNews();
 
     @GET("news_content")
-    Call<News> getNewsById(@Query("id") String id);
+    Call<News2> getNewsById(@Query("id") String id);
 }

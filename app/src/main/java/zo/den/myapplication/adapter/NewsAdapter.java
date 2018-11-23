@@ -20,11 +20,10 @@ import zo.den.myapplication.R;
 import zo.den.myapplication.fragments.DialogFragment1;
 import zo.den.myapplication.pojo.Payload;
 
-public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener{
 
     private List<Payload> newsList;
     private Fragment fragment;
-    private String idNews;
 
     public NewsAdapter(Fragment fragment) {
         this.newsList = Collections.emptyList();
@@ -45,6 +44,10 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item1, parent, false);
             return new ViewHolder1(v);
         }
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 
@@ -56,10 +59,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             v0.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (idNews!=null) {
-                        DialogFragment dialogFragment = new DialogFragment1(idNews);
+                        DialogFragment dialogFragment = new DialogFragment1(newsList.get(i).getId());
                         dialogFragment.show(fragment.getFragmentManager(), "dlg");
-                    }
                 }
             });
         } else if (viewHolder instanceof ViewHolder1) {
@@ -68,10 +69,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             v1.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (idNews!=null) {
-                        DialogFragment dialogFragment = new DialogFragment1(idNews);
+                        DialogFragment dialogFragment = new DialogFragment1(newsList.get(i).getId());
                         dialogFragment.show(fragment.getFragmentManager(), "dlg");
-                    }
                 }
             });
         }
@@ -98,11 +97,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 if (payload.getText() != null)
                     text.setText(Html.fromHtml(payload.getText(), Html.FROM_HTML_MODE_LEGACY));
-                if (payload.getId() != null)
-                    idNews = payload.getId();
             } else {
                 text.setText(Html.fromHtml(payload.getText()));
-                idNews = payload.getId();
             }
             name.setText(payload.getName());
         }
@@ -122,11 +118,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 if (payload.getText() != null)
                     text.setText(Html.fromHtml(payload.getText(), Html.FROM_HTML_MODE_LEGACY));
-                if (payload.getId() != null)
-                    idNews = payload.getId();
             } else {
                 text.setText(Html.fromHtml(payload.getText()));
-                idNews = payload.getId();
             }
             name.setText(payload.getName());
         }

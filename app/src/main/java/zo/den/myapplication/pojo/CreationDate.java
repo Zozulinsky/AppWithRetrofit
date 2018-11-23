@@ -8,13 +8,13 @@ public class CreationDate {
 
     @SerializedName("milliseconds")
     @Expose
-    private Integer milliseconds;
+    private Long milliseconds;
 
-    public Integer getMilliseconds() {
+    public Long getMilliseconds() {
         return milliseconds;
     }
 
-    public void setMilliseconds(Integer milliseconds) {
+    public void setMilliseconds(Long milliseconds) {
         this.milliseconds = milliseconds;
     }
 
